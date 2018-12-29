@@ -1,0 +1,86 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [
+            {
+                "description": "Sample Colors",
+                "colors": {
+                    "mainColor": "purple",
+                    "secondaryColor": "#bada55",
+                    "accent": "#1c3",
+                    "background": "#f8f8f8",
+                    "fontColor": "#420"
+                }
+            }
+        ],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "items": [
+                {
+                    "type": "Container",
+                    "height": "100vh",
+                    "width": "100vw",
+                    "direction": "column",
+                    "items": [
+                        {
+                            "type": "Frame",
+                            "height": "100vh",
+                            "width": "100vw",
+                            "backgroundColor": "@background",
+                            "item": [
+                                {
+                                    "description": "you can use description as a comment as well",
+                                    "type": "Container",
+                                    "height": "100vh",
+                                    "width": "100vw",
+                                    "direction": "row",
+                                    "items": [
+                                        {
+                                            "type": "Container",
+                                            "height": "100vh",
+                                            "width": "50vw",
+                                            "direction": "column",
+                                            "items": [
+                                                {
+                                                    "type": "Text",
+                                                    "text": "Sample Photo",
+                                                    "color": "@fontColor",
+                                                    "fontSize": "6vw",
+                                                    "fontWeight": "900",
+                                                    "position": "absolute",
+                                                    "left": "5vw",
+                                                    "top": "10vh"
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "text": "This is a really long sentence that is going to run on and on and on and on and on and on and on and on and on.",
+                                                    "color": "@fontColor",
+                                                    "position": "absolute",
+                                                    "left": "5vw",
+                                                    "top": "30vh"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Image",
+                                            "source": "https://picsum.photos/200/300/?random",
+                                            "height": "100vh",
+                                            "width": "75vh",
+                                            "position": "absolute",
+                                            "left": "100vh"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "dataSources": {}
+}
