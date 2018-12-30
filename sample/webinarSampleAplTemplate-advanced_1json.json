@@ -1,0 +1,45 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.0",
+        "theme": "dark",
+        "import": [],
+        "resources": [
+            {
+                "description": "background image",
+                "strings": {
+                    "backgroundImg": "https://s3.amazonaws.com/emmetts-game/chalkboard-517818_1920.jpg"
+                }
+            }
+        ],
+        "styles": {},
+        "layouts": {},
+        "mainTemplate": {
+            "items": [
+                {
+                    "type": "Container",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "direction": "column",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "@backgroundImg",
+                            "height": "100vh",
+                            "width": "100vw",
+                            "position": "absolute",
+                            "scale": "best-fill"
+                        },
+                        {
+                            "type": "Text",
+                            "text": "Hello World",
+                            "fontSize": "8vw",
+                            "textAlign": "center"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "dataSources": {}
+}
