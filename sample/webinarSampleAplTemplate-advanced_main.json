@@ -1,0 +1,148 @@
+{
+  "type": "APL",
+  "version": "1.0",
+  "theme": "dark",
+  "import": [
+    {
+      "name": "alexa-viewport-profiles",
+      "version": "1.0.0"
+    }
+  ],
+  "resources": [
+    {
+      "description": "background image",
+      "strings": {
+        "backgroundImg": "https://s3.amazonaws.com/emmetts-game/chalkboard-517818_1920.jpg"
+      }
+    },
+    {
+      "description": "Font sizes",
+      "when": "${@viewportProfile !== @hubRoundSmall}",
+      "dimensions": {
+        "headerFontSize": "12vw",
+        "headerPaddingTop": "5vh"
+      }
+    },
+    {
+      "description": "Font sizes",
+      "when": "${@viewportProfile == @hubRoundSmall}",
+      "dimensions": {
+        "headerFontSize": "20vw",
+        "headerPaddingTop": "10vh"
+      }
+    },
+    {
+      "description": "colors",
+      "strings": {
+        "mainFontColor": "#E8E8F8"
+      }
+    }
+  ],
+  "styles": {
+    "Header": {
+      "values": [
+        {
+          "fontSize": "@headerFontSize",
+          "textAlign": "center",
+          "color": "@mainFontColor",
+          "paddingTop": "@headerPaddingTop"
+        }
+      ]
+    }
+  },
+  "layouts": {
+    "BackgroundImage": {
+      "parameters": ["imgSrc"],
+      "items": [
+        {
+          "type": "Image",
+          "source": "${imgSrc}",
+          "height": "100vh",
+          "width": "100vw",
+          "position": "absolute",
+          "scale": "best-fill"
+        }
+      ]
+    },
+    "PagerItem": {
+      "parameters": ["title", "subTitle"],
+      "items": [
+        {
+          "type": "Container",
+          "width": "100vw",
+          "height": "100vh",
+          "direction": "column",
+          "alignItems": "center",
+          "items": [
+            {
+              "type": "Text",
+              "text": "${title}",
+              "fontSize": "10vw",
+              "paddingTop": "5vh",
+              "paddingBottom": "3vh",
+              "color": "@mainFontColor"
+            },
+            {
+              "type": "Frame",
+              "width": "50vh",
+              "height": "0.75vh",
+              "backgroundColor": "@mainFontColor"
+            },
+            {
+              "type": "Text",
+              "text": "${subTitle}",
+              "fontSize": "6vw",
+              "paddingTop": "10vh",
+              "color": "#C7C7C7"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "mainTemplate": {
+    "items": [
+      {
+        "type": "Container",
+        "width": "100vw",
+        "height": "100vh",
+        "direction": "column",
+        "items": [
+          {
+            "type": "BackgroundImage",
+            "imgSrc": "@backgroundImg"
+          },
+          {
+            "type": "Text",
+            "text": "Hello World",
+            "style": "Header"
+          },
+          {
+            "when": "${@viewportProfile !== @hubRoundSmall}",
+            "type": "Pager",
+            "id": "pagerComponentId",
+            "width": "100vw",
+            "height": "50vh",
+            "items": [
+              {
+                "type": "PagerItem",
+                "title": "Part One",
+                "subTitle": " 🔥"
+              },
+              {
+                "type": "PagerItem",
+                "title": "Part Two",
+                "subTitle": "🧟  🧟"
+              },
+              {
+                "type": "PagerItem",
+                "title": "Part Three",
+                "subTitle": "💥 💥 💥"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

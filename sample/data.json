@@ -1,0 +1,9 @@
+{
+  "quizData": {
+    "type": "object",
+    "properties": {
+      "question": "here is a question",
+      "choices": ["a", "b", "c", "d"]
+    }
+  }
+}
